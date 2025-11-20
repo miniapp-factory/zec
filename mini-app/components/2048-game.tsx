@@ -79,7 +79,7 @@ export default function Game2048() {
   const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
-    let newBoard = board;
+    let newBoard = createEmptyBoard();
     for (let i = 0; i < INITIAL_TILES; i++) {
       newBoard = addRandomTile(newBoard);
     }
@@ -88,7 +88,7 @@ export default function Game2048() {
 
   const handleMove = (direction: "up" | "down" | "left" | "right") => {
     if (gameOver) return;
-    const { board: newBoard, scoreDelta } = move(board, direction);
+    let { board: newBoard, scoreDelta } = move(board, direction);
     if (JSON.stringify(newBoard) === JSON.stringify(board)) return; // no change
     newBoard = addRandomTile(newBoard);
     setBoard(newBoard);
