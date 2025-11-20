@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
-import Share from "@/components/share";
+import { Share } from "@/components/share";
 import { url } from "@/lib/metadata";
 
 const GRID_SIZE = 4;
